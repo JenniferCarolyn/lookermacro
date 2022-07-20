@@ -76,13 +76,13 @@ GROUP BY          a.Fecha_Key,
     sql: ${TABLE}.Oficial_Cuenta_Key ;;
   }
 
-  dimension: oficial_cuenta {
-    type: string
+  measure: oficial_cuenta {
+    type: max
     sql: ${TABLE}.Oficial_Cuenta ;;
   }
 
-  dimension: identificacion_usuario {
-    type: string
+  measure: identificacion_usuario {
+    type: max
     sql: ${TABLE}.Identificacion_Usuario ;;
   }
 
@@ -96,8 +96,8 @@ GROUP BY          a.Fecha_Key,
     sql: ${TABLE}.Especie_Key ;;
   }
 
-  dimension: saldo {
-    type: number
+  measure: saldo {
+    type: sum
     sql: ${TABLE}.Saldo ;;
   }
 
