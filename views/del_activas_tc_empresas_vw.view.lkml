@@ -23,7 +23,7 @@ view: del_activas_tc_empresas_vw {
   }
   dimension: Sector_Key {
     type: number
-    sql: ${fct_cartera_activa.Sector_Keu} ;;
+    sql: ${fct_cartera_activa.Sector_Key} ;;
   }
   dimension: Oficial_Cuenta_Key {
     type: number
