@@ -1,3 +1,5 @@
+# Se puede trabajar con una PDT en la view
+
 view: del_activas_tc_empresas_vw {
   dimension: Fecha_Key {
     type: number
