@@ -10,26 +10,26 @@ datagroup: bancomacro_prueba_default_datagroup {
 
 persist_with: bancomacro_prueba_default_datagroup
 
-explore: del_activas_tc_empresas {
+explore: del_activas_tc_empresas_vw {
   from: fct_cartera_activa
   join: lkp_fechas {
     type: left_outer
-    sql_on: ${del_activas_tc_empresas.fecha_key} = ${lkp_fechas.fecha_key} ;;
+    sql_on: ${del_activas_tc_empresas_vw.fecha_key} = ${lkp_fechas.fecha_key} ;;
     relationship: many_to_one
   }
   join: lkp_cuentas {
     type: left_outer
-    sql_on: ${del_activas_tc_empresas.cuenta_key}=${lkp_cuentas.cuenta_key} ;;
+    sql_on: ${del_activas_tc_empresas_vw.cuenta_key}=${lkp_cuentas.cuenta_key} ;;
     relationship: many_to_one
   }
   join: lkp_clientes_completa {
     type: left_outer
-    sql_on: ${del_activas_tc_empresas.cliente_key}=${lkp_clientes_completa.cliente_key} ;;
+    sql_on: ${del_activas_tc_empresas_vw.cliente_key}=${lkp_clientes_completa.cliente_key} ;;
     relationship: many_to_one
   }
   join: lkp_productos {
     type: left_outer
-    sql_on: ${del_activas_tc_empresas.producto_key}=${lkp_productos.producto_key} ;;
+    sql_on: ${del_activas_tc_empresas_vw.producto_key}=${lkp_productos.producto_key} ;;
     relationship: many_to_one
   }
   join: lkp_bancas {
