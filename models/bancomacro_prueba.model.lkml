@@ -45,3 +45,5 @@ explore: fct_cartera_activa {
   }
 }
 explore: cartera_activa_pdt {}
+
+explore: del_activas_tc_empresas_vw {}
