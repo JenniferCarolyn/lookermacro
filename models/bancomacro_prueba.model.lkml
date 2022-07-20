@@ -43,3 +43,4 @@ explore: del_activas_tc_empresas_vw {
     relationship: many_to_one
   }
 }
+explore: cartera_activa_pdt {}

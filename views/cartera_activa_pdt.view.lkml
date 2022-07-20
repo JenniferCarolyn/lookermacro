@@ -1,4 +1,4 @@
-view: sql_runner_query {
+view: cartera_activa_pdt {
   derived_table: {
     sql: select    a.Fecha_Key,
                                a.Cliente_Key,
