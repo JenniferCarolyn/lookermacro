@@ -10,42 +10,36 @@ datagroup: bancomacro_prueba_default_datagroup {
 
 persist_with: bancomacro_prueba_default_datagroup
 
-explore: agr_promedios_pasivos {}
-
-explore: fct_cartera_activa {}
-
-explore: fct_detalle_comisiones {}
-
-explore: agr_situacion_cartera {}
-
-explore: fct_situaciones_plan_sueldos {}
-
-explore: lkp_bancas {}
-
-explore: lkp_agrupacion_comisiones {}
-
-explore: agr_saldos_fci {}
-
-explore: lkp_capitas_plan_sueldo {}
-
-explore: lkp_clientes_completa {}
-
-explore: lkp_cuentas {}
-
-explore: lkp_estados_ps {}
-
-explore: lkp_causales {}
-
-explore: lkp_estado_deuda {}
-
-explore: lkp_fechas {}
-
-explore: lkp_grupos_comisiones {}
-
-explore: lkp_plan_cuentas {}
-
-explore: lkp_oficiales_cuentas {}
-
-explore: lkp_productos {}
-
-explore: lkp_sucursales_radicacion {}
+explore: del_activas_tc_empresas {
+  from: fct_cartera_activa
+  join: lkp_fechas {
+    type: left_outer
+    sql_on: ${del_activas_tc_empresas.fecha_key} = ${lkp_fechas.fecha_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_cuentas {
+    type: left_outer
+    sql_on: ${del_activas_tc_empresas.cuenta_key}=${lkp_cuentas.cuenta_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_clientes_completa {
+    type: left_outer
+    sql_on: ${del_activas_tc_empresas.cliente_key}=${lkp_clientes_completa.cliente_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_productos {
+    type: left_outer
+    sql_on: ${del_activas_tc_empresas.producto_key}=${lkp_productos.producto_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_bancas {
+    type: left_outer
+    sql_on: ${lkp_clientes_completa.banca_comite_key}=${lkp_bancas.banca_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_oficiales_cuentas {
+    type: left_outer
+    sql_on: ${lkp_clientes_completa.oficial_cuenta_key}=${lkp_oficiales_cuentas.oficial_cuenta_key} ;;
+    relationship: many_to_one
+  }
+}
