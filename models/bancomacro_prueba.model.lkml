@@ -11,7 +11,6 @@ datagroup: bancomacro_prueba_default_datagroup {
 persist_with: bancomacro_prueba_default_datagroup
 
 explore: fct_cartera_activa {
-  fields: [lkp_fechas.periodo, lkp_bancas.banca, lkp_productos.producto, banco_key]
   sql_always_where: ${lkp_fechas.periodo} >= '2019-01' and ${lkp_fechas.periodo} = 'S' and ${lkp_bancas.banca} in ('Agro','Corporativa','Megra','Empresas')
                     and ${lkp_productos.producto} = 'Tarjetas de Crédito' and ${banco_key} = 95   ;;
   join: lkp_fechas {
@@ -35,8 +34,9 @@ explore: fct_cartera_activa {
     relationship: many_to_one
   }
   join: lkp_bancas {
+    fields: [lkp_bancas.banca_key]
     type: left_outer
-    sql_on: ${lkp_clientes_completa.banca_comite_key}=${lkp_bancas.banca_key} ;;
+    sql_on: ${lkp_clientes_completa.banca_comite_key}=${lkp_bancas.banca_key};;
     relationship: many_to_one
   }
   join: lkp_oficiales_cuentas {
