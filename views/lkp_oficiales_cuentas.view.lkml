@@ -31,4 +31,14 @@ view: lkp_oficiales_cuentas {
     type: count
     drill_fields: []
   }
+
+  measure: max_oficial_cuenta {
+    type: max
+    sql: ${oficial_cuenta} ;;
+  }
+
+  measure: max_identificacion_usuario {
+    type: max
+    sql: ${identificacion_usuario} ;;
+  }
 }

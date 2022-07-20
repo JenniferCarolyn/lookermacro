@@ -5,8 +5,7 @@ view: del_activas_tc_empresas_vw {
   dimension: fecha_key {
     type: number
     sql: ${TABLE}.Fecha_Key ;;
-  }
-
+}
   dimension: cliente_key {
     type: number
     sql: ${TABLE}.Cliente_Key ;;

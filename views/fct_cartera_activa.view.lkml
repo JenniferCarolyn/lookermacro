@@ -540,4 +540,9 @@ view: fct_cartera_activa {
     type: count
     drill_fields: []
   }
+
+  measure: Saldo {
+    type: sum
+    sql: ${saldo_deuda} ;;
+  }
 }
