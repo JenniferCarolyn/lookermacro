@@ -58,7 +58,6 @@ explore: fct_cartera_activa {
     relationship: many_to_one
   }
 }
-
 explore: agr_saldos_fci {
   join: lkp_fechas {
     type: left_outer
@@ -85,7 +84,5 @@ explore: agr_saldos_fci {
     type: left_outer
     sql_on: ${lkp_fechas.fecha_key}=${agr_promedios_pasivos.fecha_key} ;;
     relationship: many_to_one
-
   }
 }
-explore: del_activas_tc_empresas_vw {}
