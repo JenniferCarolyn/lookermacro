@@ -1,6 +1,7 @@
 view: fct_cartera_activa {
   sql_table_name: `LOOKER.fct_cartera_activa`
     ;;
+  fields_hidden_by_default: yes
 
   dimension: abono_key {
     type: number
@@ -168,6 +169,7 @@ view: fct_cartera_activa {
   }
 
   dimension: cliente_key {
+    hidden: no
     type: number
     sql: ${TABLE}.Cliente_Key ;;
   }
@@ -213,6 +215,7 @@ view: fct_cartera_activa {
   }
 
   dimension: especie_key {
+    hidden: no
     type: number
     sql: ${TABLE}.Especie_Key ;;
   }
@@ -487,6 +490,7 @@ view: fct_cartera_activa {
   }
 
   dimension: sector_key {
+    hidden: no
     type: number
     sql: ${TABLE}.Sector_Key ;;
   }
@@ -537,11 +541,13 @@ view: fct_cartera_activa {
   }
 
   measure: count {
+    hidden: no
     type: count
     drill_fields: []
   }
 
   measure: Saldo {
+    hidden: no
     type: sum
     sql: ${saldo_deuda} ;;
   }
