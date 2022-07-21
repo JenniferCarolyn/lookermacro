@@ -10,6 +10,7 @@ datagroup: bancomacro_prueba_default_datagroup {
 
 persist_with: bancomacro_prueba_default_datagroup
 
+# CARTERA ACTIVA (TC)
 explore: fct_cartera_activa {
   sql_always_where: ${lkp_fechas.periodo} >= '2019-01' and ${lkp_fechas.periodo} = 'S' and ${lkp_bancas.banca} in ('Agro','Corporativa','Megra','Empresas')
                     and ${lkp_productos.producto} = 'Tarjetas de Crédito' and ${banco_key} = 95   ;;
@@ -44,7 +45,13 @@ explore: fct_cartera_activa {
     sql_on: ${lkp_clientes_completa.oficial_cuenta_key}=${lkp_oficiales_cuentas.oficial_cuenta_key} ;;
     relationship: many_to_one
   }
+  join: lkp_sucursales_radicacion {
+    type: left_outer
+    sql_on: ${lkp_clientes_completa.sucursal_radicacion_key} = ${lkp_sucursales_radicacion.sucursal_radicacion_key} ;;
+    relationship: many_to_one
+  }
 }
+
 explore: cartera_activa_pdt {}
 
 explore: del_activas_tc_empresas_vw {}
