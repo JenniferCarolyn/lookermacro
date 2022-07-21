@@ -59,6 +59,27 @@ explore: fct_cartera_activa {
   }
 }
 
-explore: cartera_activa_pdt {}
-
+explore: agr_saldos_fci {
+  from: agr_promedios_pasivos
+  join: lkp_fechas {
+    type: left_outer
+    sql_on: ${agr_saldos_fci.fecha_key}=${lkp_fechas.fecha_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_clientes_completa {
+    type: left_outer
+    sql_on: ${lkp_clientes_completa.cliente_key}=${agr_saldos_fci.cliente_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_bancas {
+    type: left_outer
+    sql_on: ${lkp_clientes_completa.banca_comite_key}=${lkp_bancas.banca_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_oficiales_cuentas {
+    type: left_outer
+    sql_on: ${lkp_clientes_completa.oficial_cuenta_key}=${lkp_oficiales_cuentas.oficial_cuenta_key} ;;
+    relationship: many_to_one
+  }
+}
 explore: del_activas_tc_empresas_vw {}
