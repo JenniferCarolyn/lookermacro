@@ -12,6 +12,7 @@ persist_with: bancomacro_prueba_default_datagroup
 
 # CARTERA ACTIVA (TC)
 explore: fct_cartera_activa {
+  from: fct_cartera_activa
   fields: [fct_cartera_activa.cliente_key, fct_cartera_activa.sector_key, fct_cartera_activa.especie_key, fct_cartera_activa.count, fct_cartera_activa.Saldo, lkp_fechas.periodo, lkp_cuentas.cuenta_key, lkp_clientes_completa.nro_doc_tributario,
            lkp_clientes_completa.codigo_cliente, lkp_clientes_completa.nombre, lkp_productos.producto, lkp_bancas.banca_key, lkp_bancas.banca,
            lkp_bancas.segmento, lkp_bancas.subsegmento, lkp_oficiales_cuentas.oficial_cuenta, lkp_sucursales_radicacion.division, lkp_sucursales_radicacion.region]
