@@ -58,7 +58,6 @@ explore: fct_cartera_activa {
     sql_on: ${lkp_clientes_completa.sucursal_radicacion_key} = ${lkp_sucursales_radicacion.sucursal_radicacion_key} ;;
     relationship: many_to_one
   }
-
 }
 
 explore: cartera_activa_pdt {}
