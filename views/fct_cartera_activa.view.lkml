@@ -1,5 +1,6 @@
 view: fct_cartera_activa {
   sql_table_name: `LOOKER.fct_cartera_activa` ;;
+  fields_hidden_by_default: yes
 
   dimension: abono_key {
     type: number
@@ -67,11 +68,13 @@ view: fct_cartera_activa {
   }
 
   dimension: banca_key {
+    hidden: no
     type: number
     sql: ${TABLE}.Banca_Key ;;
   }
 
   dimension: banco_key {
+    hidden: no
     type: number
     sql: ${TABLE}.Banco_Key ;;
   }
@@ -167,6 +170,7 @@ view: fct_cartera_activa {
   }
 
   dimension: cliente_key {
+    hidden: no
     type: number
     sql: ${TABLE}.Cliente_Key ;;
   }
@@ -182,6 +186,7 @@ view: fct_cartera_activa {
   }
 
   dimension: cuenta_key {
+    hidden: no
     type: number
     sql: ${TABLE}.Cuenta_Key ;;
   }
@@ -212,6 +217,7 @@ view: fct_cartera_activa {
   }
 
   dimension: especie_key {
+    hidden: no
     type: number
     sql: ${TABLE}.Especie_Key ;;
   }
@@ -227,6 +233,7 @@ view: fct_cartera_activa {
   }
 
   dimension_group: fech_vto_div {
+    hidden: no
     type: time
     timeframes: [
       raw,
@@ -241,6 +248,7 @@ view: fct_cartera_activa {
   }
 
   dimension: fecha_key {
+    hidden: no
     type: number
     sql: ${TABLE}.Fecha_Key ;;
   }
@@ -471,6 +479,7 @@ view: fct_cartera_activa {
   }
 
   dimension: producto_key {
+    hidden: no
     type: number
     sql: ${TABLE}.Producto_Key ;;
   }
@@ -481,6 +490,7 @@ view: fct_cartera_activa {
   }
 
   dimension: saldo_deuda {
+    hidden: no
     type: number
     sql: ${TABLE}.Saldo_Deuda ;;
   }
@@ -536,11 +546,13 @@ view: fct_cartera_activa {
   }
 
   measure: count {
+    hidden: no
     type: count
     drill_fields: []
   }
 
   measure: Saldo {
+    hidden: no
     type: sum
     sql: ${saldo_deuda} ;;
   }

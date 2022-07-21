@@ -12,10 +12,8 @@ persist_with: bancomacro_prueba_default_datagroup
 
 # CARTERA ACTIVA (TC)
 explore: fct_cartera_activa {
-  from: fct_cartera_activa
-  fields: [fct_cartera_activa.cliente_key, fct_cartera_activa.fecha_key, fct_cartera_activa.cuenta_key, fct_cartera_activa.producto_key, fct_cartera_activa.Saldo, fct_cartera_activa.count]
  # POSIBLES FILTROS sql_always_where: ${lkp_fechas.periodo} >= '2019-01' and ${lkp_fechas.periodo} = 'S' and ${lkp_bancas.banca} in ('Agro','Corporativa','Megra','Empresas')
- # POSIBLES FILTROS                   and ${lkp_productos.producto} = 'Tarjetas de Crédito' and ${banco_key} = 95   ;;
+ #                                    and ${lkp_productos.producto} = 'Tarjetas de Crédito' and ${banco_key} = 95   ;;
  # POSIBLES FILTROS sql_always_where: ${lkp_fechas.periodo} >= "2021-01" AND ${lkp_fechas.periodo} = 'S' ;;
   join: lkp_fechas {
     fields: [lkp_fechas.periodo]
