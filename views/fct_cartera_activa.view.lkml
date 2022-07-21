@@ -1,6 +1,5 @@
 view: fct_cartera_activa {
-  sql_table_name: `LOOKER.fct_cartera_activa`
-    ;;
+  sql_table_name: `LOOKER.fct_cartera_activa` ;;
   fields_hidden_by_default: yes
 
   dimension: abono_key {
