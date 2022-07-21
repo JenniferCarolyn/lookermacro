@@ -80,9 +80,8 @@ explore: agr_saldos_fci {
     relationship: many_to_one
   }
   join: agr_promedios_pasivos {
-    from: lkp_fechas
-    type: left_outer
-    sql_on: ${lkp_fechas.fecha_key}=${agr_promedios_pasivos.fecha_key} ;;
+    type: full_outer
+    sql_on: ${agr_saldos_fci.fecha_key}=${agr_promedios_pasivos.fecha_key};;
     relationship: many_to_one
   }
 }
