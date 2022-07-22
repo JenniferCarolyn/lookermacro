@@ -59,9 +59,9 @@ explore: fct_cartera_activa {
     relationship: many_to_one
   }
 }
-explore: agr_promedios_pasivos{
+explore: agr_saldos_fci {
   label: "Cartera Pasiva sin PDT"
-  sql_always_where: ${lkp_productos.cartera}="Pasiva" ;;
+  sql_always_where: ${lkp_bancas.banca_key}="95" and ${lkp_bancas.banca} in ("Megra", "Corporativa", "Empresas", "Agro") and ${lkp_fechas.periodo} >= "2019-01" ;;
   join: lkp_fechas {
     type: left_outer
     sql_on: ${agr_saldos_fci.fecha_key}=${lkp_fechas.fecha_key} ;;
@@ -82,7 +82,9 @@ explore: agr_promedios_pasivos{
     sql_on: ${lkp_clientes_completa.oficial_cuenta_key}=${lkp_oficiales_cuentas.oficial_cuenta_key} ;;
     relationship: many_to_one
   }
-  join: agr_saldos_fci {
+  join:  agr_promedios_pasivos{
+    sql_where: ${lkp_productos.cartera}="Pasiva" and ${lkp_productos.producto} in ("Cuentas a la vista", "Cuentas a plazo", "Otras Cuentas")
+                ${lkp_productos.familia_productos} not in ("Cedros", "Oblig. por Canje (Boden)") ;;
     type: left_outer
     sql_on: ${agr_saldos_fci.fecha_key}=${agr_promedios_pasivos.fecha_key};;
     relationship: many_to_one
