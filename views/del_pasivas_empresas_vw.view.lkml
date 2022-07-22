@@ -119,6 +119,31 @@ GROUP BY agr.Fecha_Key,
     sql: ${TABLE}.Saldo_Promedio_Mes ;;
   }
 
+  measure: importe {
+    type: sum
+    sql: ${saldo_promedio_mes} ;;
+  }
+
+  measure: max_oficial_cuenta {
+    type: max
+    sql: ${oficial_cuenta} ;;
+  }
+
+  measure: max_identificacion_usuario {
+    type: max
+    sql: ${identificacion_usuario} ;;
+  }
+
+  measure: sum_saldo {
+    type: sum
+    sql: ${saldo} ;;
+  }
+
+  measure: sum_saldo_promedio_mes { #El mismo que IMPORTE
+    type: sum
+    sql: ${saldo_promedio_mes} ;;
+  }
+
   set: detail {
     fields: [
       fecha_key,
@@ -132,7 +157,8 @@ GROUP BY agr.Fecha_Key,
       especie_key,
       clasificacion_producto,
       saldo,
-      saldo_promedio_mes
+      saldo_promedio_mes,
+      importe
     ]
   }
 }
