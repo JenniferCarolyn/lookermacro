@@ -29,7 +29,7 @@ explore: fct_cartera_activa {
     relationship: many_to_one
   }
   join: lkp_clientes_completa {
-    fields: [lkp_clientes_completa.nro_doc_tributario, lkp_clientes_completa.codigo_cliente, lkp_clientes_completa.nombre, lkp_clientes_completa.tipo_persona]
+    fields: [lkp_clientes_completa.nro_doc_tributario, lkp_clientes_completa.codigo_cliente, lkp_clientes_completa.nombre, lkp_clientes_completa.tipo_persona,lkp_clientes_completa.banca_comite_key]
     type: left_outer
     sql_on: ${fct_cartera_activa.cliente_key}=${lkp_clientes_completa.cliente_key} ;;
     relationship: many_to_one
@@ -96,7 +96,7 @@ explore: del_pasivas_empresas_vw {
     relationship: many_to_one
   }
   join: lkp_clientes_completa {
-    fields: [lkp_clientes_completa.nro_doc_tributario, lkp_clientes_completa.codigo_cliente, lkp_clientes_completa.nombre, lkp_clientes_completa.tipo_persona]
+    fields: [lkp_clientes_completa.nro_doc_tributario, lkp_clientes_completa.codigo_cliente, lkp_clientes_completa.nombre, lkp_clientes_completa.tipo_persona, lkp_clientes_completa.banca_comite_key]
     type: left_outer
     sql_on: ${del_pasivas_empresas_vw.cliente_key} = ${lkp_clientes_completa.cliente_key} ;;
     relationship: many_to_one
