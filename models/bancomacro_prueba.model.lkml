@@ -60,6 +60,7 @@ explore: fct_cartera_activa {
   }
 }
 explore: agr_saldos_fci {
+  label: "Cartera Pasiva sin PDT"
   join: lkp_fechas {
     type: left_outer
     sql_on: ${agr_saldos_fci.fecha_key}=${lkp_fechas.fecha_key} ;;
@@ -81,6 +82,7 @@ explore: agr_saldos_fci {
     relationship: many_to_one
   }
   join: agr_promedios_pasivos {
+    fields: [agr_promedios_pasivos.producto_key]
     type: left_outer
     sql_on: ${agr_saldos_fci.fecha_key}=${agr_promedios_pasivos.fecha_key};;
     relationship: many_to_one
