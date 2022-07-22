@@ -1,4 +1,4 @@
-view: cartera_activa_final {
+view: cartera_activa_prueba_dt {
   derived_table: {
     sql: select
       b.Periodo,
