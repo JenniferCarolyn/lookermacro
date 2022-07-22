@@ -1,5 +1,4 @@
 view: agr_saldos_fci {
-  view_label: ""
   sql_table_name: `LOOKER.agr_saldos_fci`
     ;;
 
