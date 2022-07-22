@@ -90,6 +90,7 @@ explore: agr_saldos_fci {
     relationship: many_to_one
   }
   join: lkp_productos {
+    from: agr_promedios_pasivos
     type: left_outer
     sql_on: ${lkp_productos.producto_key}=${agr_promedios_pasivos.producto_key} ;;
     relationship: many_to_one
