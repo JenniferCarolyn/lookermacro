@@ -130,6 +130,7 @@ view: fct_cartera_activa {
   }
 
   dimension: categoria_cuenta_key {
+    hidden: no
     type: number
     sql: ${TABLE}.Categoria_Cuenta_Key ;;
   }
