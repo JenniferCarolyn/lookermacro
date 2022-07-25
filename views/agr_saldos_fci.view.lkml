@@ -51,7 +51,10 @@ fields_hidden_by_default: yes
     type: number
     sql: ${TABLE}.Sucursal_Radicacion_Key ;;
   }
-
+  dimension: producto {
+    type: string
+    sql: "Fondos común de Inversión" ;;
+  }
   measure: count {
     type: count
     drill_fields: []
