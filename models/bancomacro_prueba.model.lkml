@@ -83,13 +83,13 @@ explore: agr_saldos_fci {
     relationship: many_to_one
   }
   join:  agr_promedios_pasivos{
-    #sql_where: ${lkp_productos.cartera}="Pasiva" and ${lkp_productos.producto} in ("Cuentas a la vista", "Cuentas a plazo", "Otras Cuentas")
-     #          ${lkp_productos.familia_productos} not in ("Cedros", "Oblig. por Canje (Boden)") ;;
     type: left_outer
     sql_on: ${agr_saldos_fci.fecha_key}=${agr_promedios_pasivos.fecha_key};;
     relationship: many_to_one
   }
   join: lkp_productos {
+    sql_where: ${lkp_productos.cartera}="Pasiva" and ${lkp_productos.producto} in ("Cuentas a la vista", "Cuentas a plazo", "Otras Cuentas")
+               ${lkp_productos.familia_productos} not in ("Cedros", "Oblig. por Canje (Boden)") ;;
     type: left_outer
     sql_on: ${lkp_productos.producto_key}=${agr_promedios_pasivos.producto_key} ;;
     relationship: many_to_one
