@@ -88,8 +88,8 @@ explore: agr_promedios_pasivos {
     relationship: many_to_one
   }
   join: lkp_productos {
-  sql_where: ${lkp_productos.cartera}="Pasiva" and ${lkp_productos.producto} in ("Cuentas a la vista", "Cuentas a plazo", "Otras Cuentas") and
-              ${lkp_productos.familia_productos} not in ("Cedros", "Oblig. por Canje (Boden)") ;;
+  # sql_where: ${lkp_productos.cartera}="Pasiva" and ${lkp_productos.producto} in ("Cuentas a la vista", "Cuentas a plazo", "Otras Cuentas") and
+   #           ${lkp_productos.familia_productos} not in ("Cedros", "Oblig. por Canje (Boden)") ;;
     type: left_outer
     sql_on: ${agr_promedios_pasivos.producto_key}=${lkp_productos.producto_key} ;;
     relationship: many_to_one
