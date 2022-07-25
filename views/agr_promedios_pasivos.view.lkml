@@ -56,10 +56,7 @@ view: agr_promedios_pasivos {
     type: number
     sql: ${TABLE}.Sucursal_Radicacion_Key ;;
   }
-  dimension: clasificacion_producto {
-    type: string
-    sql: "Fondos común de Inversión" ;;
-  }
+
   measure: count {
     type: count
     drill_fields: []
