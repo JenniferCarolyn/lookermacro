@@ -52,15 +52,11 @@ fields_hidden_by_default: yes
     sql: ${TABLE}.Sucursal_Radicacion_Key ;;
   }
   dimension: clasificacion_producto {
-    hidden: yes
+    hidden: no
     type: string
     sql: "Fondos común de Inversión" ;;
   }
-  dimension: clasificacion_productos {
-    hidden: no
-    type: string
-    sql: ${TABLE}.Clasificacion_Producto ;;
-  }
+
   measure: count {
     type: count
     drill_fields: []
