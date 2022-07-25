@@ -69,7 +69,7 @@ explore: agr_saldos_fci {
   }
   join: lkp_clientes_completa {
     type: left_outer
-    sql_on: ${lkp_clientes_completa.cliente_key}=${agr_saldos_fci.cliente_key} ;;
+    sql_on: ${agr_saldos_fci.cliente_key}=${lkp_clientes_completa.cliente_key} ;;
     relationship: many_to_one
   }
   join: lkp_bancas {
