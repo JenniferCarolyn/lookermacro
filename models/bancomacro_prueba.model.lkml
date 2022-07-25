@@ -59,17 +59,17 @@ explore: fct_cartera_activa {
     relationship: many_to_one
   }
 }
-explore: agr_saldos_fci {
+explore: agr_promedios_pasivos {
   label: "Cartera Pasiva sin PDT"
   #sql_always_where: ${lkp_bancas.banca_key}= 95 and ${lkp_bancas.banca} in ("Megra", "Corporativa", "Empresas", "Agro") ;;
   join: lkp_fechas {
     type: left_outer
-    sql_on: ${agr_saldos_fci.fecha_key}=${lkp_fechas.fecha_key} ;;
+    sql_on: ${agr_promedios_pasivos.fecha_key}=${lkp_fechas.fecha_key} ;;
     relationship: many_to_one
   }
   join: lkp_clientes_completa {
     type: left_outer
-    sql_on: ${agr_saldos_fci.cliente_key}=${lkp_clientes_completa.cliente_key} ;;
+    sql_on: ${agr_promedios_pasivos.cliente_key}=${lkp_clientes_completa.cliente_key} ;;
     relationship: many_to_one
   }
   join: lkp_bancas {
@@ -82,16 +82,17 @@ explore: agr_saldos_fci {
     sql_on: ${lkp_clientes_completa.oficial_cuenta_key}=${lkp_oficiales_cuentas.oficial_cuenta_key} ;;
     relationship: many_to_one
   }
-  join:  agr_promedios_pasivos{
+  join:  agr_saldos_fci{
     type: full_outer
-    sql_on: ${agr_saldos_fci.banca_comite_key}=${agr_promedios_pasivos.cliente_key};;
+    sql_on: ${agr_promedios_pasivos.cliente_key}=${agr_saldos_fci.cliente_key};;
     relationship: many_to_one
   }
   join: lkp_productos {
-  # sql_where: ${lkp_productos.cartera}="Pasiva" and ${lkp_productos.producto} in ("Cuentas a la vista", "Cuentas a plazo", "Otras Cuentas") and
-   #           ${lkp_productos.familia_productos} not in ("Cedros", "Oblig. por Canje (Boden)") ;;
+    from: agr_saldos_fci
+    # sql_where: ${lkp_productos.cartera}="Pasiva" and ${lkp_productos.producto} in ("Cuentas a la vista", "Cuentas a plazo", "Otras Cuentas") and
+    #           ${lkp_productos.familia_productos} not in ("Cedros", "Oblig. por Canje (Boden)") ;;
     type: left_outer
-    sql_on: ${agr_saldos_fci.clasificacion_producto}=${lkp_productos.producto} ;;
+    sql_on: ${agr_saldos_fci.clasificacion_producto}=${lkp_productos.clasificacion_producto} ;;
     relationship: many_to_one
   }
 }
