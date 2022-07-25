@@ -129,3 +129,48 @@ explore: del_pasivas_empresas_vw {
     relationship: many_to_one
   }
 }
+explore: agr_situacion_cartera   {
+  label: "Cartera Activa sin TC"
+  join: lkp_fechas {
+    fields: [lkp_fechas.periodo]
+    type: left_outer
+    sql_on: ${agr_situacion_cartera.fecha_key} = ${lkp_fechas.fecha_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_clientes_completa {
+    fields: [lkp_clientes_completa.nro_doc_tributario, lkp_clientes_completa.codigo_cliente, lkp_clientes_completa.nombre]
+    type: left_outer
+    sql_on: ${agr_situacion_cartera.cliente_key} = ${lkp_clientes_completa.cliente_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_bancas {
+    fields: [lkp_bancas.banca, lkp_bancas.segmento, lkp_bancas.subsegmento]
+    type: left_outer
+    sql_on: ${lkp_clientes_completa.banca_comite_key} = ${lkp_bancas.banca_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_oficiales_cuentas {
+    fields: [lkp_oficiales_cuentas.oficial_cuenta]
+    type: left_outer
+    sql_on: ${lkp_clientes_completa.oficial_cuenta_key} = ${lkp_oficiales_cuentas.oficial_cuenta_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_productos {
+    #case
+    fields: [lkp_productos.familia_productos]
+    type: left_outer
+    sql_on: ${agr_situacion_cartera.producto_key} = ${lkp_productos.producto_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_estado_deuda {
+    type: left_outer
+    sql_on: ${agr_situacion_cartera.estado_deuda_key} = ${lkp_estado_deuda.estado_deuda_key} ;;
+    relationship: many_to_one
+  }
+  join: lkp_sucursales_radicacion {
+    fields: [lkp_sucursales_radicacion.division, lkp_sucursales_radicacion.region]
+    type: left_outer
+    sql_on: ${agr_situacion_cartera.sucursal_radicacion_key} = ${lkp_sucursales_radicacion.sucursal_radicacion_key} ;;
+    relationship: many_to_one
+  }
+}
