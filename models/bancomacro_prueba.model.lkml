@@ -88,11 +88,10 @@ explore: agr_promedios_pasivos {
     relationship: many_to_one
   }
   join: lkp_productos {
-    from: agr_saldos_fci
     # sql_where: ${lkp_productos.cartera}="Pasiva" and ${lkp_productos.producto} in ("Cuentas a la vista", "Cuentas a plazo", "Otras Cuentas") and
     #           ${lkp_productos.familia_productos} not in ("Cedros", "Oblig. por Canje (Boden)") ;;
     type: left_outer
-    sql_on: ${agr_saldos_fci.clasificacion_producto}=${lkp_productos.clasificacion_producto} ;;
+    sql_on: ${agr_saldos_fci.clasificacion_producto}=${lkp_productos.producto} ;;
     relationship: many_to_one
   }
 }
