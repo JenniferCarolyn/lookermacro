@@ -1,7 +1,6 @@
 view: agr_promedios_pasivos {
   sql_table_name: `LOOKER.agr_promedios_pasivos`
     ;;
-    fields_hidden_by_default: yes
 
   dimension: banca_comite_key {
     type: number
@@ -34,7 +33,6 @@ view: agr_promedios_pasivos {
   }
 
   dimension: producto_key {
-    hidden: no
     type: number
     sql: ${TABLE}.Producto_Key ;;
   }

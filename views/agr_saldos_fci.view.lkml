@@ -1,6 +1,6 @@
 view: agr_saldos_fci {
-  sql_table_name: `LOOKER.agr_saldos_fci`
-    ;;
+  sql_table_name: `LOOKER.agr_saldos_fci` ;;
+fields_hidden_by_default: yes
 
   dimension: banca_comite_key {
     type: number
