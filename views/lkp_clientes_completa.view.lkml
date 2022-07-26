@@ -264,6 +264,11 @@ view: lkp_clientes_completa {
     sql: ${TABLE}.Tipo_Titular_Key ;;
   }
 
+  dimension: cliente_cobis {
+    type: string
+    sql: concat(${codigo_cliente}, " ", ${nombre}) ;;
+  }
+
   measure: count {
     type: count
     drill_fields: []
