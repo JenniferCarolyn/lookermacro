@@ -266,7 +266,7 @@ view: lkp_clientes_completa {
 
   dimension: cliente_cobis {
     type: string
-    sql: concat(${codigo_cliente}, " ", ${nombre}) ;;
+    sql: concat(cast(${codigo_cliente} AS string), " ", ${nombre}) ;;
   }
 
   measure: count {
