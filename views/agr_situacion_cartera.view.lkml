@@ -54,7 +54,7 @@ view: agr_situacion_cartera {
   dimension: clasificacion_producto {
     case: {
       when: {
-        sql: (${lkp_productos.familia_productos}  and ${lkp_productos.tipo_producto}  not in ("Utilización fondo Unificado"))
+        sql: (${lkp_productos.familia_productos} in ("Cuenta Corriente") and ${lkp_productos.tipo_producto} not in ("Utilización Fondo Unificado"))
             or (${lkp_productos.familia_productos} in ("Adelantos en Cuenta Corriente", "Otros Adelantos"))
             or (${lkp_productos.producto_source} in ("089713", "FIMP089713") and ${lkp_productos.familia_productos} = "Comercio Exterior");;
         label: "Adelantos en Cuenta Corriente y Otros Adelantos"
