@@ -119,7 +119,7 @@ GROUP BY agr.Fecha_Key,
   }
 
   measure: importe {
-    value_format: "$#,##0.00"
+    value_format: "0.000,,\" M\""
     type: sum
     sql: ${saldo_promedio_mes} ;;
   }
@@ -135,13 +135,13 @@ GROUP BY agr.Fecha_Key,
   }
 
   measure: sum_saldo {
-    value_format: "$#,##0.00"
+    value_format: "0.000,,\" M\""
     type: sum
     sql: ${saldo} ;;
   }
 
   measure: sum_saldo_promedio_mes { #El mismo que IMPORTE
-    value_format: "$#,##0.00"
+    value_format: "0.000,,\" M\""
     type: sum
     sql: ${saldo_promedio_mes} ;;
   }

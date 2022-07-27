@@ -547,14 +547,14 @@ view: fct_cartera_activa {
   }
 
   measure: count {
-    value_format: "$#,##0.00"
+    value_format: "0.000,,\" M\""
     hidden: no
     type: count
     drill_fields: []
   }
 
   measure: Saldo {
-    value_format: "$#,##0.00"
+    value_format: "0.000,,\" M\""
     hidden: no
     type: sum
     sql: ${saldo_deuda} ;;

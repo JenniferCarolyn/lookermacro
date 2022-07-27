@@ -62,19 +62,19 @@ fields_hidden_by_default: yes
     drill_fields: []
   }
   measure: importe {
-    value_format: "$#,##0.00"
+    value_format: "0.000,,\" M\""
     type: sum
     sql: ${saldo_promedio_mes} ;;
 }
 
   measure: sum_saldo {
-    value_format: "$#,##0.00"
+    value_format: "0.000,,\" M\""
     type: sum
     sql: ${saldo} ;;
 }
 
   measure: sum_saldo_promedio_mes { #El mismo que IMPORTE
-  value_format: "$#,##0.00"
+  value_format: "0.000,,\" M\""
   type: sum
   sql: ${saldo_promedio_mes} ;;
 }
