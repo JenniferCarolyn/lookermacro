@@ -35,7 +35,7 @@ explore: fct_cartera_activa {
     relationship: many_to_one
   }
   join: lkp_productos {
-    fields: [lkp_productos.producto]
+    fields: [lkp_productos.producto, lkp_productos.familia_productos]
     type: left_outer
     sql_on: ${fct_cartera_activa.producto_key}=${lkp_productos.producto_key} ;;
     relationship: many_to_one
