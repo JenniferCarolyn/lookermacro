@@ -94,12 +94,12 @@ view: agr_situacion_cartera {
   }
 
   measure: saldo_sum{
-    value_format: "0,,\" M\""
+    value_format: "#,##0,,\" M\""
     type: sum
     sql: ${TABLE}.Saldo ;;
   }
   measure: saldo_promedio_mes {
-    value_format: "0,,\" M\""
+    value_format: "#,##0,,\" M\""
     type: sum
     sql: ${TABLE}.Saldo_Promedio_Mes ;;
   }
