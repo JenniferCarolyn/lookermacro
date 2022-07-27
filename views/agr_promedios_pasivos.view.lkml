@@ -62,19 +62,19 @@ view: agr_promedios_pasivos {
     drill_fields: []
   }
   measure: importe {
-    value_format: "0.000,,\" M\""
+    value_format: "0,,\" M\""
     type: sum
     sql: ${saldo_promedio_mes} ;;
   }
 
   measure: sum_saldo {
-    value_format: "0.000,,\" M\""
+    value_format: "0,,\" M\""
     type: sum
     sql: ${saldo} ;;
   }
 
   measure: sum_saldo_promedio_mes { #El mismo que IMPORTE
-    value_format: "0.000,,\" M\""
+    value_format: "0,,\" M\""
     type: sum
     sql: ${saldo_promedio_mes} ;;
   }
