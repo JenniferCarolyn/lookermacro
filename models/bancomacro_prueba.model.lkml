@@ -17,7 +17,6 @@ explore: fct_cartera_activa {
  #                                    and ${lkp_productos.producto} = 'Tarjetas de Crédito' and ${banco_key} = 95   ;;
  # POSIBLES FILTROS sql_always_where: ${lkp_fechas.periodo} >= "2021-01" AND ${lkp_fechas.periodo} = 'S' ;;
   join: lkp_fechas {
-    fields: [lkp_fechas.periodo, lkp_fechas.flag_fin_mes]
     type: left_outer
     sql_on: ${fct_cartera_activa.fecha_key} = ${lkp_fechas.fecha_key};;
     relationship: many_to_one
@@ -99,7 +98,6 @@ explore: agr_promedios_pasivos {
 explore: del_pasivas_empresas_vw {
   label: "Cartera Pasiva"
   join: lkp_fechas {
-    fields: [lkp_fechas.periodo]
     type: left_outer
     sql_on: ${del_pasivas_empresas_vw.fecha_key} = ${lkp_fechas.fecha_key} ;;
     relationship: many_to_one
@@ -132,7 +130,6 @@ explore: del_pasivas_empresas_vw {
 explore: agr_situacion_cartera   {
   label: "Cartera Activa sin TC"
   join: lkp_fechas {
-    fields: [lkp_fechas.periodo]
     type: left_outer
     sql_on: ${agr_situacion_cartera.fecha_key} = ${lkp_fechas.fecha_key} ;;
     relationship: many_to_one
