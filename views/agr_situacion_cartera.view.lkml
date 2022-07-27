@@ -107,7 +107,7 @@ view: agr_situacion_cartera {
   measure: saldo_promedio_mes_anterior {
     value_format: "#,##0,,\" M\""
     type: sum
-    sql: (SELECT Saldo FROM agr_situacion_cartera sc WHERE CAST(DATE_SUB(CAST(CONCAT(${lkp_fechas.periodo}, "-01") as DATE), INTERVAL 1 MONTH) as DATE) = CAST(CONCAT(${lkp_fechas.fecha_fin_mes_anterior_month}, "-01") AS DATE) GROUP BY sc.Saldo, ${lkp_fechas.periodo}, ${lkp_fechas.fecha_fin_mes_anterior_month});;
+    sql: (SELECT Saldo FROM agr_situacion_cartera sc WHERE DATE_SUB(CAST(CONCAT(${lkp_fechas.periodo}, "-01") as DATE), INTERVAL 1 MONTH) = CAST(CONCAT(${lkp_fechas.fecha_fin_mes_anterior_month}, "-01") AS DATE) GROUP BY sc.Saldo, ${lkp_fechas.periodo}, ${lkp_fechas.fecha_fin_mes_anterior_month});;
 
   }
 
