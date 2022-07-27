@@ -107,7 +107,7 @@ view: agr_situacion_cartera {
   measure: saldo_promedio_mes_anterior {
     value_format: "#,##0,,\" M\""
     type: number
-    sql: (SELECT ${saldo_promedio_mes} FROM agr_situacion_cartera WHERE ${lkp_fechas.periodo} = ${lkp_fechas.fecha_fin_mes_anterior_month}) ;;
+    sql: (SELECT ${saldo_promedio_mes} FROM agr_situacion_cartera WHERE ${lkp_fechas.periodo} = ${lkp_fechas.fecha_fin_mes_anterior_month} GROUP BY ${lkp_fechas.periodo}, ${lkp_fechas.fecha_fin_mes_anterior_month}) ;;
   }
 
   dimension: sector_key {
