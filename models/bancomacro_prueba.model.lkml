@@ -57,6 +57,16 @@ explore: fct_cartera_activa {
     sql_on: ${lkp_clientes_completa.sucursal_radicacion_key} = ${lkp_sucursales_radicacion.sucursal_radicacion_key} ;;
     relationship: many_to_one
   }
+  join: del_pasivas_empresas_vw {
+    type: left_outer
+    sql_on: ${fct_cartera_activa.cliente_key} = ${del_pasivas_empresas_vw.cliente_key} ;;
+    relationship: many_to_one
+  }
+  join: agr_situacion_cartera {
+    type: left_outer
+    sql_on: ${fct_cartera_activa.cliente_key} = ${agr_situacion_cartera.cliente_key} ;;
+    relationship: many_to_one
+  }
 }
 explore: agr_promedios_pasivos {
   label: "Cartera Pasiva sin PDT"
