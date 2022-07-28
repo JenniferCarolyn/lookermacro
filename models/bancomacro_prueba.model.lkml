@@ -113,7 +113,7 @@ explore: del_pasivas_empresas_vw {
     relationship: many_to_one
   }
   join: lkp_clientes_completa {
-    fields: [lkp_clientes_completa.nro_doc_tributario, lkp_clientes_completa.codigo_cliente, lkp_clientes_completa.nombre, lkp_clientes_completa.tipo_persona, lkp_clientes_completa.banca_comite_key, lkp_clientes_completa.cliente_cobis]
+    fields: [lkp_clientes_completa.nro_doc_tributario, lkp_clientes_completa.codigo_cliente, lkp_clientes_completa.nombre, lkp_clientes_completa.tipo_persona, lkp_clientes_completa.banca_comite_key, lkp_clientes_completa.cliente_cobis, lkp_clientes_completa.count]
     type: left_outer
     sql_on: ${del_pasivas_empresas_vw.cliente_key} = ${lkp_clientes_completa.cliente_key} ;;
     relationship: many_to_one
@@ -145,7 +145,7 @@ explore: agr_situacion_cartera   {
     relationship: many_to_one
   }
   join: lkp_clientes_completa {
-    fields: [lkp_clientes_completa.nro_doc_tributario, lkp_clientes_completa.codigo_cliente, lkp_clientes_completa.nombre, lkp_clientes_completa.cliente_cobis]
+    fields: [lkp_clientes_completa.nro_doc_tributario, lkp_clientes_completa.codigo_cliente, lkp_clientes_completa.nombre, lkp_clientes_completa.cliente_cobis, lkp_clientes_completa.count]
     type: left_outer
     sql_on: ${agr_situacion_cartera.cliente_key} = ${lkp_clientes_completa.cliente_key} ;;
     relationship: many_to_one
