@@ -558,4 +558,10 @@ view: fct_cartera_activa {
     type: sum
     sql: ${saldo_deuda} ;;
   }
+
+  measure: count_distinct {
+    hidden: no
+    type: count_distinct
+    drill_fields: []
+  }
 }
