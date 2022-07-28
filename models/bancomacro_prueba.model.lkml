@@ -77,6 +77,7 @@ explore: agr_promedios_pasivos {
     relationship: many_to_one
   }
   join: lkp_clientes_completa {
+    fields: [lkp_clientes_completa.count]
     type: left_outer
     sql_on: ${agr_promedios_pasivos.cliente_key}=${lkp_clientes_completa.cliente_key} ;;
     relationship: many_to_one
