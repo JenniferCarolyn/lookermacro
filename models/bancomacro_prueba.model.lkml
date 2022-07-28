@@ -186,3 +186,5 @@ explore: agr_situacion_cartera   {
     relationship: many_to_one
   }
 }
+
+explore: lkp_clientes_completa {}
