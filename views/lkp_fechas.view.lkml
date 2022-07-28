@@ -178,7 +178,7 @@ view: lkp_fechas {
 
   dimension: ultimo_periodo {
     type: string
-    sql: (SELECT MAX(CAST(${periodo} as DATE)) FROM lkp_fechas) ;;
+    sql: (SELECT MAX(CAST(CONCAT(${periodo}, "-01") as DATE)) FROM lkp_fechas) ;;
   }
 
   dimension_group: viernes_anterior {
