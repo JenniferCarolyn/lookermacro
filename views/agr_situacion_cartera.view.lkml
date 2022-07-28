@@ -95,7 +95,7 @@ view: agr_situacion_cartera {
 
   dimension: clasificacion_producto_activo_pasivo {
     type: string
-    sql: ${agr_situacion_cartera.clasificacion_producto}, ${del_pasivas_empresas_vw.clasificacion_producto} GROUP BY ${del_pasivas_empresas_vw.clasificacion_producto} ;;
+    sql: ${agr_situacion_cartera.clasificacion_producto}, "Cuentas a la vista", "Cuentas a plazo", "Fondos Comunes de Inversion" ;;
   }
 
   measure: saldo_sum{
