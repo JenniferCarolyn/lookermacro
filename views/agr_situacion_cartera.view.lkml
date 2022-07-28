@@ -155,7 +155,7 @@ view: agr_situacion_cartera {
   measure: saldo_promedio_mes {
     value_format: "#,##0,,\" M\""
     type: sum
-    sql: ${TABLE}.Saldo_Promedio_Mes ;;
+    sql: ${TABLE}.saldo_promedio_mes ;;
   }
 
   measure: saldo_promedio_mes_pasivo {
