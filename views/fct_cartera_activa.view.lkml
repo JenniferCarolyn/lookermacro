@@ -547,7 +547,6 @@ view: fct_cartera_activa {
   }
 
   measure: count {
-    value_format: "#,##0,,\" M\""
     hidden: no
     type: count
     drill_fields: []
