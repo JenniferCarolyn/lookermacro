@@ -273,4 +273,10 @@ view: lkp_clientes_completa {
     type: count
     drill_fields: []
   }
+
+  measure: count_clientes {
+    type: count_distinct
+    drill_fields: []
+    sql: ${lkp_clientes_completa.cliente_cobis} ;;
+  }
 }

@@ -547,7 +547,6 @@ view: fct_cartera_activa {
   }
 
   measure: count {
-    value_format: "#,##0,,\" M\""
     hidden: no
     type: count
     drill_fields: []
@@ -558,5 +557,12 @@ view: fct_cartera_activa {
     hidden: no
     type: sum
     sql: ${saldo_deuda} ;;
+  }
+
+  measure: count_clientes {
+    hidden: no
+    type: count_distinct
+    drill_fields: []
+    sql: ${lkp_clientes_completa.cliente_cobis} ;;
   }
 }
