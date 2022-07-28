@@ -558,12 +558,7 @@ view: fct_cartera_activa {
     type: sum
     sql: ${saldo_deuda} ;;
   }
-  measure: saldo_promedio_mes {
-    value_format: "#,##0,,\" M\""
-    hidden: no
-    type: sum
-    sql: ${TABLE}.Saldo_Promedio_Mes ;;
-  }
+
   measure: count_clientes {
     hidden: no
     type: count_distinct
