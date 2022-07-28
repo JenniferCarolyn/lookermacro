@@ -184,4 +184,6 @@ explore: agr_situacion_cartera   {
   }
 }
 
-explore: lkp_clientes_completa {}
+explore: lkp_clientes_completa {
+
+}
