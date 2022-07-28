@@ -176,6 +176,11 @@ view: lkp_fechas {
     sql: ${TABLE}.Trimestre ;;
   }
 
+  dimension: ultimo_periodo {
+    type: string
+    sql: (SELECT MAX(CAST(${periodo} as DATE) FROM lkp_fechas) ;;
+  }
+
   dimension_group: viernes_anterior {
     type: time
     timeframes: [
