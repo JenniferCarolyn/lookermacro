@@ -146,10 +146,10 @@ GROUP BY agr.Fecha_Key,
     sql: ${saldo_promedio_mes} ;;
   }
 
-  measure: count_distinct {
-    hidden: no
+  measure: count_clientes {
     type: count_distinct
     drill_fields: []
+    sql: ${lkp_clientes_completa.cliente_cobis} ;;
   }
 
   set: detail {

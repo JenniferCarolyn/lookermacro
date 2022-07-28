@@ -559,9 +559,9 @@ view: fct_cartera_activa {
     sql: ${saldo_deuda} ;;
   }
 
-  measure: count_distinct {
-    hidden: no
+  measure: count_clientes {
     type: count_distinct
     drill_fields: []
+    sql: ${lkp_clientes_completa.cliente_cobis} ;;
   }
 }

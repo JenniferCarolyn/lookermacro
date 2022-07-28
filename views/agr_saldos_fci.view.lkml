@@ -79,9 +79,10 @@ fields_hidden_by_default: yes
     sql: ${saldo_promedio_mes} ;;
   }
 
-  measure: count_distinct {
+  measure: count_clientes {
     type: count_distinct
     drill_fields: []
+    sql: ${lkp_clientes_completa.cliente_cobis} ;;
   }
 
 
