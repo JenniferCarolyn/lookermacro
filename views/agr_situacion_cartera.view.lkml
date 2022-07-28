@@ -95,7 +95,7 @@ view: agr_situacion_cartera {
 
   dimension: clasificacion_producto_activo_pasivo {
     type: string
-    sql: ${agr_situacion_cartera.clasificacion_producto}, ${del_pasivas_empresas_vw.clasificacion_producto} GROUP BY ${agr_situacion_cartera.clasificacion_producto}, ${del_pasivas_empresas_vw.clasificacion_producto} ;;
+    sql: ${agr_situacion_cartera.clasificacion_producto}, ${del_pasivas_empresas_vw.clasificacion_producto} GROUP BY ${del_pasivas_empresas_vw.clasificacion_producto} ;;
   }
 
   measure: saldo_sum{
