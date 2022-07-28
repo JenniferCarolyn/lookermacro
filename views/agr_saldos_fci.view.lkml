@@ -65,17 +65,24 @@ fields_hidden_by_default: yes
     value_format: "#,##0,,\" M\""
     type: sum
     sql: ${saldo_promedio_mes} ;;
-}
+    }
 
   measure: sum_saldo {
     value_format: "#,##0,,\" M\""
     type: sum
     sql: ${saldo} ;;
-}
+    }
 
   measure: sum_saldo_promedio_mes { #El mismo que IMPORTE
-  value_format: "#,##0,,\" M\""
-  type: sum
-  sql: ${saldo_promedio_mes} ;;
-}
+    value_format: "#,##0,,\" M\""
+    type: sum
+    sql: ${saldo_promedio_mes} ;;
+  }
+
+  measure: count_distinct {
+    type: count_distinct
+    drill_fields: []
+  }
+
+
 }
