@@ -560,6 +560,7 @@ view: fct_cartera_activa {
   }
 
   measure: count_clientes {
+    hidden: no
     type: count_distinct
     drill_fields: []
     sql: ${lkp_clientes_completa.cliente_cobis} ;;
