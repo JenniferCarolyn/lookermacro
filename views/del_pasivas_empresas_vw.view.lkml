@@ -146,6 +146,12 @@ GROUP BY agr.Fecha_Key,
     sql: ${saldo_promedio_mes} ;;
   }
 
+  measure: count_distinct {
+    hidden: no
+    type: count_distinct
+    drill_fields: []
+  }
+
   set: detail {
     fields: [
       fecha_key,

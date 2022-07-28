@@ -179,4 +179,10 @@ view: agr_situacion_cartera {
     type: count
     drill_fields: []
   }
+
+  measure: count_distinct {
+    hidden: no
+    type: count_distinct
+    drill_fields: []
+  }
 }
