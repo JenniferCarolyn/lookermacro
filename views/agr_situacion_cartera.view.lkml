@@ -93,6 +93,11 @@ view: agr_situacion_cartera {
     }
   }
 
+  dimension: clasificacion_producto_activo_pasivo {
+    type: string
+    sql: ${clasificacion_producto}, ${del_pasivas_empresas_vw.clasificacion_producto} ;;
+  }
+
   measure: saldo_sum{
     value_format: "#,##0,,\" M\""
     type: sum
@@ -104,10 +109,10 @@ view: agr_situacion_cartera {
     sql: ${TABLE}.Saldo_Promedio_Mes ;;
   }
 
-  measure: saldo_promedio_mes_anterior {
+  measure: saldo_promedio_mes_pasivo {
     value_format: "#,##0,,\" M\""
     type: sum
-    sql: (SELECT Saldo FROM agr_situacion_cartera sc WHERE DATE_SUB(CAST(CONCAT(${lkp_fechas.periodo}, "-01") as DATE), INTERVAL 1 MONTH) = CAST(CONCAT(${lkp_fechas.fecha_fin_mes_anterior_month}, "-01") AS DATE) GROUP BY sc.Saldo, ${lkp_fechas.periodo}, ${lkp_fechas.fecha_fin_mes_anterior_month});;
+    sql: ${del_pasivas_empresas_vw.saldo_promedio_mes} ;;
 
   }
 

@@ -180,4 +180,9 @@ explore: agr_situacion_cartera   {
     sql_on: ${agr_situacion_cartera.sucursal_radicacion_key} = ${lkp_sucursales_radicacion.sucursal_radicacion_key} ;;
     relationship: many_to_one
   }
+  join: del_pasivas_empresas_vw {
+    type: left_outer
+    sql_on: ${agr_situacion_cartera.cliente_key} = ${del_pasivas_empresas_vw.cliente_key} ;;
+    relationship: many_to_one
+  }
 }
