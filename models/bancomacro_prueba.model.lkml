@@ -66,6 +66,11 @@ explore: fct_cartera_activa {
     sql_on: ${fct_cartera_activa.cliente_key} = ${agr_situacion_cartera.cliente_key} ;;
     relationship: many_to_one
   }
+  join: lkp_especies {
+    type: left_outer
+    sql_on: ${fct_cartera_activa.especie_key} = ${lkp_especies.especie_key} ;;
+    relationship: many_to_one
+  }
 }
 explore: agr_promedios_pasivos {
   label: "Cartera Pasiva sin PDT"
@@ -135,7 +140,13 @@ explore: del_pasivas_empresas_vw {
     sql_on: ${del_pasivas_empresas_vw.oficial_cuenta_key} = ${lkp_oficiales_cuentas.oficial_cuenta_key} ;;
     relationship: many_to_one
   }
+  join: lkp_especies {
+    type: left_outer
+    sql_on: ${del_pasivas_empresas_vw.especie_key} = ${lkp_especies.especie_key} ;;
+    relationship: many_to_one
+    }
 }
+
 explore: agr_situacion_cartera   {
   label: "Cartera Activa sin TC"
   join: lkp_fechas {
@@ -183,8 +194,11 @@ explore: agr_situacion_cartera   {
     sql_on: ${agr_situacion_cartera.cliente_key} = ${del_pasivas_empresas_vw.cliente_key} ;;
     relationship: many_to_one
   }
+  join: lkp_especies {
+    type: left_outer
+    sql_on: ${agr_situacion_cartera.especie_key} = ${lkp_especies.especie_key} ;;
+    relationship: many_to_one
+    }
 }
 
-explore: lkp_clientes_completa {
-
-}
+explore: lkp_clientes_completa {}
