@@ -40,7 +40,7 @@ explore: fct_cartera_activa {
   join: lkp_bancas {
     fields: [lkp_bancas.banca_key, lkp_bancas.banca, lkp_bancas.segmento, lkp_bancas.subsegmento,lkp_bancas.categoria]
     type: left_outer
-    sql_on: ${lkp_clientes_completa.banca_comite_key}=${lkp_bancas.banca_key};;
+    sql_on: ${fct_cartera_activa.banca_key}=${lkp_bancas.banca_key};;
     relationship: many_to_one
   }
   join: lkp_oficiales_cuentas {
