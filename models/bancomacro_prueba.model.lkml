@@ -147,6 +147,8 @@ explore: del_pasivas_empresas_vw {
 }
 
 explore: agr_situacion_cartera   {
+  sql_always_where: ${banco_key} = 95 and ${lkp_bancas.banca} in ('Megra','Corporativa','Agro','Empresas') and ${lkp_estado_deuda.estado_deuda} in('Congelada','Normal','Vencida')
+                    and ${lkp_productos.producto} != "Tarjetas de Crédito" and ${lkp_productos.familia_productos} != "Tarjetas de Crédito" and ${origen} not like 'TC%';;
   label: "Cartera Activa sin TC"
   join: lkp_fechas {
     type: left_outer
