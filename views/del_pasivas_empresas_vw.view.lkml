@@ -39,7 +39,7 @@ left outer join lkp_productos as h on agr.Producto_Key = h.Producto_Key
 left outer join lkp_oficiales_cuentas as oc on c.Oficial_Cuenta_Key = oc.Oficial_Cuenta_Key
 WHERE agr.Banco_Key = 95
     and h.Cartera in( 'Pasiva' )
-    and h.Producto in( 'Cuentas a la vista','Cuentas a plazo','Otras Cuentas' )
+    and h.Producto in( 'Cuentas a la vista','Cuentas a plazo','Otras cuentas' )
     and d.Banca in( 'Megra','Corporativa','Agro','Empresas' )
     and h.Familia_Productos not in( 'Cedros','Oblig. por Canje (Boden)' )
 GROUP BY agr.Fecha_Key,
