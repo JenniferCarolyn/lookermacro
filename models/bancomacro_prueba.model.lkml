@@ -70,6 +70,11 @@ explore: fct_cartera_activa {
     sql_on: ${fct_cartera_activa.especie_key} = ${lkp_especies.especie_key} ;;
     relationship: many_to_one
   }
+  join: lkp_periodos_transformacion {
+    type: left_outer
+    sql_on: ${fct_cartera_activa.fecha_key} = ${lkp_periodos_transformacion.fecha_key} ;;
+    relationship: many_to_one
+  }
 }
 explore: agr_promedios_pasivos {
   label: "Cartera Pasiva sin PDT"
@@ -144,6 +149,11 @@ explore: del_pasivas_empresas_vw {
     sql_on: ${del_pasivas_empresas_vw.especie_key} = ${lkp_especies.especie_key} ;;
     relationship: many_to_one
     }
+  join: lkp_periodos_transformacion {
+    type: left_outer
+    sql_on: ${del_pasivas_empresas_vw.fecha_key} = ${lkp_periodos_transformacion.fecha_key} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: agr_situacion_cartera   {
@@ -200,6 +210,11 @@ explore: agr_situacion_cartera   {
     sql_on: ${agr_situacion_cartera.especie_key} = ${lkp_especies.especie_key} ;;
     relationship: many_to_one
     }
+  join: lkp_periodos_transformacion {
+    type: left_outer
+    sql_on: ${agr_situacion_cartera.fecha_key} = ${lkp_periodos_transformacion.fecha_key} ;;
+    relationship: many_to_one
+  }
 }
 
 explore: lkp_clientes_completa {}
