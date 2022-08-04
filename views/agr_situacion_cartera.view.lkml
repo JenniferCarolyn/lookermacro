@@ -167,7 +167,7 @@ view: agr_situacion_cartera {
   measure: saldo_promedio_mes_anterior {
     value_format: "#,##0,,\" M\""
     type: sum
-    sql: ${TABLE}.saldo_promedio_mes
+    sql: ${TABLE}.saldo_promedio_mes ;;
   }
 
   dimension: sector_key {
