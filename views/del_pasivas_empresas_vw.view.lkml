@@ -17,7 +17,7 @@ join lkp_fechas as a on agr.Fecha_Key = a.Fecha_Key
 left outer join lkp_clientes_completa c on c.Cliente_Key = agr.Cliente_Key
 left outer join lkp_bancas as b on c.Banca_Comite_Key = b.Banca_Key
 left outer join lkp_oficiales_cuentas as oc on c.Oficial_Cuenta_Key = oc.Oficial_Cuenta_Key
-WHERE agr.Banco_Key = 95 and b.Banca in( 'Megra','Corporativa','Agro','Empresas' )
+WHERE agr.Banco_Key = 95 and b.Banca in ('Megra','Corporativa','Agro','Empresas', 'Gobierno')
 UNION ALL
 SELECT agr.Fecha_Key,
                                agr.Cliente_Key,
