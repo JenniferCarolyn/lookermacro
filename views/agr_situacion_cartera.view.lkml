@@ -162,6 +162,13 @@ view: agr_situacion_cartera {
     value_format: "#,##0,,\" M\""
     type: sum
     sql: ${del_pasivas_empresas_vw.saldo_promedio_mes} ;;
+  }
+
+  measure: saldo_promedio_mes_anterior {
+    value_format: "#,##0,,\" M\""
+    type: sum
+    sql:
+        CASE WHEN ${lkp_periodos_transformacion.periodo} = "2022-05" AND ${lkp_periodos_transformacion.periodo_mes_ant} = "2022-04" THEN SUM(${TABLE}.saldo_promedio_mes ELSE 0 END;;
 
   }
 
