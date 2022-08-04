@@ -17,7 +17,7 @@ join lkp_fechas as a on agr.Fecha_Key = a.Fecha_Key
 left outer join lkp_clientes_completa c on c.Cliente_Key = agr.Cliente_Key
 left outer join lkp_bancas as b on c.Banca_Comite_Key = b.Banca_Key
 left outer join lkp_oficiales_cuentas as oc on c.Oficial_Cuenta_Key = oc.Oficial_Cuenta_Key
-WHERE agr.Banco_Key = 95 and b.Banca in ('Megra','Corporativa','Agro','Empresas', 'Gobierno')
+WHERE agr.Banco_Key = 95 and b.Banca in ( 'Megra','Corporativa','Agro','Empresas', 'Gobierno' )
 UNION ALL
 SELECT agr.Fecha_Key,
                                agr.Cliente_Key,
@@ -40,7 +40,7 @@ left outer join lkp_oficiales_cuentas as oc on c.Oficial_Cuenta_Key = oc.Oficial
 WHERE agr.Banco_Key = 95
     and h.Cartera in( 'Pasiva' )
     and h.Producto in( 'Cuentas a la vista','Cuentas a plazo','Otras cuentas' )
-    and d.Banca in( 'Megra','Corporativa','Agro','Empresas' )
+    and d.Banca in( 'Megra','Corporativa','Agro','Empresas','Gobierno' )
     and h.Familia_Productos not in( 'Cedros','Oblig. por Canje (Boden)' )
 GROUP BY agr.Fecha_Key,
                                agr.Cliente_Key,
