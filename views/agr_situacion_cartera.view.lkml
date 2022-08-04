@@ -167,7 +167,7 @@ view: agr_situacion_cartera {
   measure: saldo_promedio_mes_anterior {
     value_format: "#,##0,,\" M\""
     type: sum
-    sql: ${TABLE}.saldo_promedio_mes ;;
+    sql: (SELECT ${TABLE}.saldo_promedio_mes from agr_situacion_cartera where ${lkp_periodos_transformacion.periodo} = "2022-04" ;;
   }
 
   dimension: sector_key {
