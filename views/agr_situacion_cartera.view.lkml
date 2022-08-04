@@ -168,7 +168,7 @@ view: agr_situacion_cartera {
     value_format: "#,##0,,\" M\""
     type: sum
     sql:
-        CASE WHEN ${lkp_periodos_transformacion.periodo_mes_ant} = "2022-04" THEN (SELECT ${TABLE}.saldo_promedio_mes from agr_situacion_cartera where ${lkp_periodos_transformacion.periodo_mes_ant} = "2022-04") ELSE 0 END;;
+        CASE WHEN ${lkp_periodos_transformacion.periodo_mes_ant} = "2022-04" THEN (SELECT ${TABLE}.saldo_promedio_mes from agr_situacion_cartera where ${lkp_periodos_transformacion.periodo} = "2022-04") ELSE 0 END;;
 
   }
 
