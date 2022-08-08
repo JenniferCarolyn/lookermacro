@@ -549,7 +549,7 @@ view: fct_cartera_activa {
     hidden: no
     type: string
     sql: ${TABLE} ;;
-    html: https://lu32.com.ar/04-2020/resize_1586387275.jpg;;
+    html:<img src= "https://lu32.com.ar/04-2020/resize_1586387275.jpg"/>;;
   }
   measure: count {
     hidden: no
