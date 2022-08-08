@@ -548,7 +548,7 @@ view: fct_cartera_activa {
   dimension: logo {
     hidden: no
     type: string
-    html: https://static.misionesonline.news/wp-content/uploads/2020/04/15104207/BM-PastillaLOGOnuevo-st.png ;;
+    html: https://lu32.com.ar/04-2020/resize_1586387275.jpg;;
   }
   measure: count {
     hidden: no
