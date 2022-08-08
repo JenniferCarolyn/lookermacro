@@ -545,11 +545,6 @@ view: fct_cartera_activa {
     type: number
     sql: ${TABLE}.unidad_recupero_key ;;
   }
-  dimension: logo {
-    hidden: no
-    type: string
-    html:<img src=”https://logo-core.clearbit.com/looker.com” /> ;;
-  }
   measure: count {
     hidden: no
     type: count
