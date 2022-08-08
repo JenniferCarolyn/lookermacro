@@ -551,6 +551,11 @@ view: fct_cartera_activa {
     sql: ${TABLE}.logo_url ;;
     html:<img src="https://lu32.com.ar/04-2020/resize_1586387275.jpg"/>;;
   }
+  dimension: looker_image {
+    type: string
+    sql: ${TABLE}.homepage_url;;
+    html: <img src="https://logo-core.clearbit.com/looker.com" /> ;;
+  }
   measure: count {
     hidden: no
     type: count
