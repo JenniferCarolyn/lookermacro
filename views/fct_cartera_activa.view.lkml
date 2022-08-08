@@ -548,7 +548,7 @@ view: fct_cartera_activa {
   dimension: logo {
     hidden: no
     type: string
-    html:<img src=”http://www.acme.com/product_images/my_image.jpg” /> ;;
+    html:<img src=”https://drive.google.com/drive/folders/1Tx64GzFyLfBGblgw3npFx7MNfJjU3fX8?usp=sharing” /> ;;
   }
   measure: count {
     hidden: no
