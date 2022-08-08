@@ -546,6 +546,7 @@ view: fct_cartera_activa {
     sql: ${TABLE}.unidad_recupero_key ;;
   }
   dimension: logo {
+    hidden: no
     type: string
     html: https://static.misionesonline.news/wp-content/uploads/2020/04/15104207/BM-PastillaLOGOnuevo-st.png ;;
   }
