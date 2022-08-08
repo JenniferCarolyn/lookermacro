@@ -3,12 +3,12 @@ connection: "capacitacion_looker_data"
 # include all the views
 include: "/views/**/*.view"
 
-datagroup: bancomacro_prueba_default_datagroup {
-  # sql_trigger: SELECT MAX(id) FROM etl_log;;
+datagroup: macro_datagroup {
+  sql_trigger: SELECT SUM(Saldo) FROM agr_saldos_fci;;
   max_cache_age: "1 hour"
 }
 
-persist_with: bancomacro_prueba_default_datagroup
+persist_with: macro_datagroup
 
 # CARTERA ACTIVA (TC)
 explore: fct_cartera_activa {
