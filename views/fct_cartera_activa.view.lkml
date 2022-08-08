@@ -548,14 +548,7 @@ view: fct_cartera_activa {
   dimension: logo {
     hidden: no
     type: string
-    sql: ${TABLE}.logo_url ;;
-    html:<img src="https://lu32.com.ar/04-2020/resize_1586387275.jpg"/>;;
-  }
-  dimension: looker_image {
-    hidden: no
-    type: string
-    sql: ${TABLE}.homepage_url;;
-    html: <img src="https://logo-core.clearbit.com/looker.com" /> ;;
+    html:<img src=”http://www.acme.com/product_images/my_image.jpg” /> ;;
   }
   measure: count {
     hidden: no
