@@ -545,7 +545,6 @@ view: fct_cartera_activa {
     type: number
     sql: ${TABLE}.unidad_recupero_key ;;
   }
-
   measure: count {
     hidden: no
     type: count
