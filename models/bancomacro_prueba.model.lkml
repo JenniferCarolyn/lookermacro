@@ -184,7 +184,7 @@ explore: agr_situacion_cartera   {
   }
   join: lkp_productos {
     #case
-    fields: [lkp_productos.familia_productos]
+    fields: [lkp_productos.familia_productos, lkp_productos.clasificacion_producto]
     type: left_outer
     sql_on: ${agr_situacion_cartera.producto_key} = ${lkp_productos.producto_key} ;;
     relationship: many_to_one
