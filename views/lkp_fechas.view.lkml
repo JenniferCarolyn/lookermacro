@@ -204,4 +204,9 @@ view: lkp_fechas {
     type: count
     drill_fields: []
   }
+
+  measure: fecha_prueba {
+    type: date_month_name
+    sql: ${fecha_date} ;;
+  }
 }
