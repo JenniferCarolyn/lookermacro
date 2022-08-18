@@ -28,16 +28,19 @@ view: lkp_sucursales_radicacion {
   }
 
   dimension: localidad {
+    group_label: "Geografía"
     type: string
     sql: ${TABLE}.Localidad ;;
   }
 
   dimension: provincia {
+    group_label: "Geografía"
     type: string
     sql: ${TABLE}.Provincia ;;
   }
 
   dimension: region {
+    group_label: "Geografía"
     type: string
     sql: ${TABLE}.Region ;;
   }
