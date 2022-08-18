@@ -50,7 +50,7 @@ explore: fct_cartera_activa {
     relationship: many_to_one
   }
   join: lkp_sucursales_radicacion {
-    fields: [lkp_sucursales_radicacion.division, lkp_sucursales_radicacion.region, lkp_sucursales_radicacion.sucursal]
+    fields: [lkp_sucursales_radicacion.division, lkp_sucursales_radicacion.region, lkp_sucursales_radicacion.sucursal, lkp_sucursales_radicacion.provincia, lkp_sucursales_radicacion.localidad]
     type: left_outer
     sql_on: ${lkp_clientes_completa.sucursal_radicacion_key} = ${lkp_sucursales_radicacion.sucursal_radicacion_key} ;;
     relationship: many_to_one
@@ -133,7 +133,7 @@ explore: del_pasivas_empresas_vw {
     relationship: many_to_one
   }
   join: lkp_sucursales_radicacion {
-    fields: [lkp_sucursales_radicacion.division, lkp_sucursales_radicacion.region, lkp_sucursales_radicacion.sucursal]
+    fields: [lkp_sucursales_radicacion.division, lkp_sucursales_radicacion.region, lkp_sucursales_radicacion.sucursal, lkp_sucursales_radicacion.provincia, lkp_sucursales_radicacion.localidad]
     type: left_outer
     sql_on: ${del_pasivas_empresas_vw.sucursal_radicacion_key} = ${lkp_sucursales_radicacion.sucursal_radicacion_key} ;;
     relationship: many_to_one
