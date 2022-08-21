@@ -147,6 +147,11 @@ view: agr_situacion_cartera {
     }
   }
 
+  dimension: saldo_promedio_mes_dim {
+    type: number
+    sql: SUM(${saldo}) ;;
+  }
+
   measure: saldo_sum{
     value_format: "#,##0,,\" M\""
     type: sum
