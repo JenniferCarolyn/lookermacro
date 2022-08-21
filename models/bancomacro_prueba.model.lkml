@@ -216,7 +216,3 @@ explore: agr_situacion_cartera   {
     relationship: many_to_one
   }
 }
-
-explore: capa {
-  from: lkp_bancas
-}
