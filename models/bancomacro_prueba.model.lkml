@@ -217,4 +217,6 @@ explore: agr_situacion_cartera   {
   }
 }
 
-explore: empresas {}
+explore: capa {
+  from: lkp_bancas
+}
