@@ -3,6 +3,7 @@ connection: "capacitacion_looker_data"
 # include all the views
 include: "/views/**/*.view"
 
+
 datagroup: macro_datagroup {
   sql_trigger: SELECT SUM(Saldo) FROM agr_saldos_fci;;
   max_cache_age: "1 hour"
@@ -162,7 +163,7 @@ explore: agr_situacion_cartera   {
   label: "Cartera Activa sin TC"
   join: lkp_fechas {
     type: left_outer
-    sql_on: ${agr_situacion_cartera.fecha_key} = ${lkp_fechas.fecha_key} ;;
+    sql_on: ${agr_situacion_cartera.fecha_key} = ${lkp_fechas.fecha_key};;
     relationship: many_to_one
   }
   join: lkp_clientes_completa {
@@ -216,5 +217,3 @@ explore: agr_situacion_cartera   {
     relationship: many_to_one
   }
 }
-
-explore: empresas {}
