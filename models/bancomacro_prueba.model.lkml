@@ -216,4 +216,5 @@ explore: agr_situacion_cartera   {
     sql_on: ${agr_situacion_cartera.fecha_key} = ${lkp_periodos_transformacion.fecha_key} ;;
     relationship: many_to_one
   }
+
 }
