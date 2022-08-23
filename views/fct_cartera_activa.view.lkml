@@ -568,7 +568,7 @@ view: fct_cartera_activa {
   measure: saldo_percentil {
     hidden: no
     type: percentile
-    percentile: 5
+    percentile: 75
     sql: ${cliente_key} ;;
   }
 }
