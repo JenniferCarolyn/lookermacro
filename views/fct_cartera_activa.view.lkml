@@ -566,6 +566,7 @@ view: fct_cartera_activa {
   }
 
   measure: saldo_percentil {
+    hidden: no
     type: percentile
     percentile: 75
     sql: ${saldo_deuda} ;;
