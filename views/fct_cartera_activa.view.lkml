@@ -569,6 +569,6 @@ view: fct_cartera_activa {
     hidden: no
     type: percentile
     percentile: 5
-    sql: ${saldo_deuda} ;;
+    sql: ${cliente_key} ;;
   }
 }
