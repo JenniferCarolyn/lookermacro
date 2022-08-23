@@ -564,4 +564,10 @@ view: fct_cartera_activa {
     drill_fields: []
     sql: ${lkp_clientes_completa.cliente_cobis} ;;
   }
+
+  measure: saldo_percentil {
+    type: percentile
+    percentile: 75
+    sql: ${saldo_deuda} ;;
+  }
 }
