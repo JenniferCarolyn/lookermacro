@@ -188,7 +188,7 @@ view: agr_situacion_cartera {
   dimension: logo {
     hidden: no
     sql: "" ;;
-    html: <img src="https://www.cloudflare.com/static/a21b6aa410021d819bec04a4ce23ae53/Looker_logo_high_res.png" width="500" height="500"/> ;;
+    html: <img src="https://www.cloudflare.com/static/a21b6aa410021d819bec04a4ce23ae53/Looker_logo_high_res.png" width="200" height="200"/> ;;
   }
 
   measure: count {
