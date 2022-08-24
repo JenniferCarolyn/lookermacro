@@ -203,7 +203,7 @@ view: agr_situacion_cartera {
     html:
           {% if agr_situacion_cartera.saldo > 50000000 %}
           <img src = "https://okdiario.com/img/2017/11/13/origen-significado-y-curiosidades-de-la-expresion-ok-3-655x368.jpg"/>
-          {% elsif agr_situacion_cartera.saldo < 5000000 %}
+          {% elsif agr_situacion_cartera.saldo < 50000000 %}
           <img src = "https://images.clipartlogo.com/files/images/39/391879/not-ok-mark-clip-art_f.jpg"/>
           {% else %}
           <img src = "https://3.bp.blogspot.com/-fFQZ6DGHPiI/WUUZpuBdbZI/AAAAAAAAV08/vt27Ndrj_H8ZcmRHwyWUWAPpqp48VP2ogCLcBGAs/s1600/OK_thumb.png"/>
