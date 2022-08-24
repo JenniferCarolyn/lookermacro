@@ -198,6 +198,7 @@ view: agr_situacion_cartera {
   }
 
   dimension: logo_condicional {
+    type: number
     hidden: no
     sql: ${saldo} ;;
     html:
