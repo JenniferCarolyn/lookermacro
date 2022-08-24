@@ -9,10 +9,15 @@ datagroup: macro_datagroup {
   max_cache_age: "1 hour"
 }
 
-persist_with: macro_datagroup
+datagroup: macro_datagroup_2 {
+  sql_trigger: SELECT MAX(Fecha_key) FROM agr_saldos_fci;;
+}
+
+
 
 # CARTERA ACTIVA (TC)
 explore: fct_cartera_activa {
+  persist_with: macro_datagroup
   label: "Cartera Activa (TC)"
   sql_always_where: ${lkp_bancas.banca} in ('Agro','Corporativa','Megra','Empresas', 'Gobierno') and ${banco_key} = 95   ;;
  # POSIBLES FILTROS sql_always_where: ${lkp_fechas.periodo} >= "2021-01" AND ${lkp_fechas.periodo} = 'S' ;;
