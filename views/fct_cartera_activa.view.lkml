@@ -549,7 +549,7 @@ view: fct_cartera_activa {
   dimension: logo {
     hidden: no
     type: string
-    html: <img src="https://www.cloudflare.com/static/a21b6aa410021d819bec04a4ce23ae53/Looker_logo_high_res.png"> ;;
+    html: <img src="https://www.cloudflare.com/static/a21b6aa410021d819bec04a4ce23ae53/Looker_logo_high_res.png" width="100" height="100"/> ;;
   }
 
   measure: count {
