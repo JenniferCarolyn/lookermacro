@@ -1,4 +1,5 @@
 view: lkp_bancas {
+  suggestions: yes
   sql_table_name: `LOOKER.lkp_bancas`
     ;;
 
