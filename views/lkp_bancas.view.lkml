@@ -8,6 +8,7 @@ view: lkp_bancas {
   }
 
   dimension: banca {
+    suggestions: ["Agro"]
     type: string
     sql: ${TABLE}.Banca ;;
   }
