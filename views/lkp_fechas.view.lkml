@@ -108,6 +108,7 @@ view: lkp_fechas {
   }
 
   dimension: fecha_key {
+    suggestions: ["1000"]
     type: number
     sql: ${TABLE}.Fecha_Key ;;
   }
@@ -203,10 +204,5 @@ view: lkp_fechas {
   measure: count {
     type: count
     drill_fields: []
-  }
-
-  measure: fecha_prueba {
-    type: date_month_name
-    sql: ${fecha_date} ;;
   }
 }
