@@ -562,7 +562,7 @@ view: fct_cartera_activa {
     hidden: no
     type: sum
     sql: ${saldo_deuda} ;;
-    value_format: "[>=1000000]0.00,,\"M\";[>=1000]0.00,\"K\";$0.00"
+    value_format: "[>=1000000]0.00,,\"M\";[>=1000]0.00,\"K\";0.00"
   }
 
   measure: count_clientes {
