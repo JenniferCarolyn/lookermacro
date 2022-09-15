@@ -1,6 +1,5 @@
 view: del_pasivas_empresas_vw {
   derived_table: {
-    datagroup_trigger: macro_datagroup
     sql: SELECT agr.Fecha_Key,
                                agr.Cliente_Key,
                                c.Banca_Comite_Key,
