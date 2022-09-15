@@ -1,4 +1,4 @@
-connection: "migracion_looker"
+connection: "looker-be-bm-gcp-s1-ingdts"
 
 # include all the views
 include: "/views/**/*.view"
