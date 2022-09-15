@@ -1,4 +1,4 @@
-connection: "capacitacion_looker_data"
+connection: "migracion_looker"
 
 # include all the views
 include: "/views/**/*.view"
