@@ -1,4 +1,4 @@
-connection: "looker-be-bm-gcp-s1-ingdts"
+connection: "capacitacion_looker_data"
 
 # include all the views
 include: "/views/**/*.view"
